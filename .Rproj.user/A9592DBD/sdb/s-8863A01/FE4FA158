@@ -1,0 +1,16 @@
+{
+    "contents" : "```{r chunk_name, results=\"hide\"}\nx <- rnorm(100)\ny <- 2*x + rnorm(100)\ncor(x, y)\n```\n",
+    "created" : 1396540870901.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4115684613",
+    "id" : "FE4FA158",
+    "lastKnownWriteTime" : 1396984456,
+    "path" : "E:/585x/try.Rmd",
+    "project_path" : null,
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_markdown"
+}

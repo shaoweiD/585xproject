@@ -1,0 +1,16 @@
+{
+    "contents" : "Title\n========================================================\n\nThis is an R Markdown document. Markdown is a simple formatting syntax for authoring web pages (click the **Help** toolbar button for more details on using R Markdown).\n\nWhen you click the **Knit HTML** button a web page will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:\nlibrary(knitr)\ninstall.packages(\"knitr\")\n```{r normal_plot, fig.width=25, fig.height=5}\nlibrary(ggplot2)\nlibrary(reshape)\noverall<-read.csv(\"E:/585x/OVERALL.csv\")\nddply(overall,summarise,)\ntrend<-overall[1:28,]\nqplot(data=trend,X=YEAR,Y=SUSPECTS.RESTRICTED,xlab=\"year\",ylab=\"number of suspects\")\ntrend.det<-melt(trend)\nas.numeric(trend$YEAR)\npd <- position_dodge(.1)\nggplot(data=trend.det,aes(x=YEAR,y=value,colour=variable))+geom_line(position=pd,aes(group=variable))\n\n\n```\n\n\n\n\n",
+    "created" : 1396540879911.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "785874807",
+    "id" : "91087B78",
+    "lastKnownWriteTime" : 1395250452,
+    "path" : "E:/585x/project.Rmd",
+    "project_path" : null,
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_markdown"
+}
