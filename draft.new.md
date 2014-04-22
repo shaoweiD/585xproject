@@ -52,19 +52,51 @@ library(reshape)
 ```r
 library(ggplot2)
 pa <- read.csv("C:/Users/sding/Documents/GitHub/585xproject/passive and active.csv")
+```
+
+```
+## Warning: cannot open file
+## 'C:/Users/sding/Documents/GitHub/585xproject/passive and active.csv': No
+## such file or directory
+```
+
+```
+## Error: cannot open the connection
+```
+
+```r
 pa$Year <- as.character(pa$Year)
+```
+
+```
+## Error: object 'pa' not found
+```
+
+```r
 pa$Year[pa$Year == "Pre 1988"] <- "1986-1988"
+```
+
+```
+## Error: object 'pa' not found
+```
+
+```r
 a.melt <- melt(pa[1:28, c(1:3, 5:6)], id = c("Year"))
+```
+
+```
+## Error: object 'pa' not found
+```
+
+```r
 pd <- position_dodge(0.1)
 ggplot(data = a.melt, aes(x = Year, y = value, colour = variable)) + geom_line(position = pd, 
     aes(group = variable))
 ```
 
 ```
-## ymax not defined: adjusting position using y instead
+## Error: object 'a.melt' not found
 ```
-
-![Passive and active surveillance in great britain and northern Ireland](figure/unnamed-chunk-1.png) 
 
 This plot shows the majority of data is from the passive surveillance in great britain, and BSE cases were the most from 1989-1996.Now we can take a look at great britain.
 
@@ -72,12 +104,32 @@ This plot shows the majority of data is from the passive surveillance in great b
 
 ```r
 overall <- read.csv("C:/Users/sding/Documents/GitHub/585xproject/OVERALL.csv")
+```
+
+```
+## Warning: cannot open file
+## 'C:/Users/sding/Documents/GitHub/585xproject/OVERALL.csv': No such file or
+## directory
+```
+
+```
+## Error: cannot open the connection
+```
+
+```r
 trend <- overall[1:28, ]
+```
+
+```
+## Error: object 'overall' not found
+```
+
+```r
 trend.det <- melt(trend)
 ```
 
 ```
-## Using YEAR as id variables
+## Error: object 'trend' not found
 ```
 
 ```r
@@ -87,10 +139,8 @@ ggplot(data = trend.det, aes(x = YEAR, y = value, colour = variable)) + geom_lin
 ```
 
 ```
-## ymax not defined: adjusting position using y instead
+## Error: object 'trend.det' not found
 ```
-
-![Passive surveillance in great britain](figure/unnamed-chunk-2.png) 
 
 
 This plot shows the trend of restricted case and confirmed case. They all follow the similar curve, but the amplitude is different.
@@ -101,23 +151,101 @@ This plot shows the trend of restricted case and confirmed case. They all follow
 library(reshape)
 library(ggplot2)
 age24 <- read.csv("C:/Users/sding/Documents/GitHub/585xproject/millioncattle.csv")
+```
+
+```
+## Warning: cannot open file
+## 'C:/Users/sding/Documents/GitHub/585xproject/millioncattle.csv': No such
+## file or directory
+```
+
+```
+## Error: cannot open the connection
+```
+
+```r
 age24 <- age24[c(1:75), -c(5, 8)]
+```
+
+```
+## Error: object 'age24' not found
+```
+
+```r
 colnames(age24) <- c("start", "end", "million of cattles", "# of case by date of confirmation", 
     "# of case by date of restriction", "# per million by data of confirmation", 
     "# per million by date of restriction")
+```
+
+```
+## Error: object 'age24' not found
+```
+
+```r
 age.sub <- age24[-1, ]
+```
+
+```
+## Error: object 'age24' not found
+```
+
+```r
 age.sub$name <- 1:74
+```
+
+```
+## Error: object 'age.sub' not found
+```
+
+```r
 age.sub[, 1] <- as.Date(x = paste("1-", age.sub[, 1], sep = ""), format = "%d-%b-%y")
+```
+
+```
+## Error: object 'age.sub' not found
+```
+
+```r
 age.sub[, 2] <- as.Date(x = paste("1-", age.sub[, 2], sep = ""), format = "%d-%b-%y")
+```
+
+```
+## Error: object 'age.sub' not found
+```
+
+```r
 age.sub$"# per million by data of confirmation" <- as.numeric(as.character(age.sub$"# per million by data of confirmation"))
+```
+
+```
+## Error: object 'age.sub' not found
+```
+
+```r
 mdfr <- melt(age.sub, measure.vars = c("start", "end"))
+```
+
+```
+## Error: object 'age.sub' not found
+```
+
+```r
 mage <- melt(age.sub, measure.vars = c("start", "end"))
+```
+
+```
+## Error: object 'age.sub' not found
+```
+
+```r
 layout(t(1:2))
 ggplot(mdfr, aes(mdfr$value, as.factor(mdfr$"million of cattles"))) + geom_line(size = 6) + 
     xlab("period") + ylab("million of cattles") + theme_bw()
 ```
 
-![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-31.png) 
+```
+## Error: object 'mdfr' not found
+```
 
 ```r
 ggplot(mage, aes(mage$value, as.factor(mage$"# per million by data of confirmation"))) + 
@@ -125,7 +253,9 @@ ggplot(mage, aes(mage$value, as.factor(mage$"# per million by data of confirmati
     theme_bw()
 ```
 
-![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-32.png) 
+```
+## Error: object 'mage' not found
+```
 
 
 
@@ -137,19 +267,171 @@ ggplot(mage, aes(mage$value, as.factor(mage$"# per million by data of confirmati
 ##  	to enable gpclib, type gpclibPermit()
 ```
 
-![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-41.png) ![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-42.png) 
+```
+## Warning: cannot open file
+## 'C:/Users/sding/Documents/GitHub/585xproject/city.csv': No such file or
+## directory
+```
+
+```
+## Error: cannot open the connection
+```
+
+```
+## Error: Error opening SHP file
+```
+
+```
+## Error: object 'uk' not found
+```
+
+```
+## Error: object 'xxx' not found
+```
+
+```
+## Error: object 'uk' not found
+```
+
+```
+## Error: error in evaluating the argument 'x' in selecting a method for function 'merge': Error: object 'oz' not found
+```
+
+```
+## Error: object 'city' not found
+```
+
+```
+## Error: object 'city' not found
+```
+
+```
+## Error: object 'city' not found
+```
+
+```
+## Error: object 'city' not found
+```
+
+```
+## Error: object 'city' not found
+```
+
+```
+## Error: object 'city' not found
+```
+
+```
+## Error: object 'city' not found
+```
+
+```
+## Error: object 'city' not found
+```
+
+```
+## Error: object 'city' not found
+```
+
+```
+## Error: object 'city' not found
+```
+
+```
+## Error: object 'city' not found
+```
+
+```
+## Error: object 'city' not found
+```
+
+```
+## Error: object 'city' not found
+```
+
+```
+## Error: object 'city' not found
+```
+
+```
+## Error: object 'city' not found
+```
+
+```
+## Error: object 'city' not found
+```
+
+```
+## Error: object 'city' not found
+```
+
+```
+## Error: object 'oz.new' not found
+```
+
+```
+## Error: object 'oz.subset' not found
+```
+
+```
+## Error: error in evaluating the argument 'x' in selecting a method for function 'merge': Error: object 'oz.subset' not found
+```
+
+```
+## Error: object 'distribution' not found
+```
+
+```
+## Error: object 'oz.new' not found
+```
+
+```
+## Error: object 'distribution' not found
+```
+
+```
+## Error: object 'oz.new' not found
+```
 
 **Percent Reduction year on year**
 
 ```r
 # percent reduction head(trend)
 red <- trend[, c(1, 2, 8)]
+```
+
+```
+## Error: object 'trend' not found
+```
+
+```r
 red$"percent reduction year on year(suspected)" <- NA
+```
+
+```
+## Error: object 'red' not found
+```
+
+```r
 red$"percent reduction year on year(confirmed)" <- NA
+```
+
+```
+## Error: object 'red' not found
+```
+
+```r
 i <- NA
 j <- NA
 per <- NA
 red[1:28, 2:3] <- as.matrix(sapply(red[1:28, 2:3], as.numeric))
+```
+
+```
+## Error: object 'red' not found
+```
+
+```r
 percent <- function(x, digits = 2, format = "f", ...) {
     paste(formatC(100 * x, format = format, digits = digits, ...), "%", sep = "")
 }
@@ -164,41 +446,122 @@ for (i in 3:(length(red$SUSPECTS.RESTRICTED))) {
         red$"percent reduction year on year(confirmed)"[i] <- 0
     }
 }
+```
+
+```
+## Error: object 'red' not found
+```
+
+```r
 
 red.melt <- melt(red[, c(1, 4, 5)], id = c("YEAR"))
+```
+
+```
+## Error: object 'red' not found
+```
+
+```r
 red.melt$value <- as.numeric(red.melt$value)
+```
+
+```
+## Error: object 'red.melt' not found
+```
+
+```r
 red.melt$value[is.na(red.melt$value)] <- 0
+```
+
+```
+## Error: object 'red.melt' not found
+```
+
+```r
 pd <- position_dodge(0.1)
 ggplot(data = red.melt, aes(x = YEAR, y = value, colour = variable)) + geom_line(position = pd, 
     aes(group = variable))
 ```
 
 ```
-## ymax not defined: adjusting position using y instead
+## Error: object 'red.melt' not found
 ```
-
-![plot of chunk percent reduction](figure/percent_reduction.png) 
 
 **the trend of different age in great britain (confirmed case)**
 
 ```r
 age <- read.csv("C:/Users/sding/Documents/GitHub/585xproject/age.gb.csv")
+```
+
+```
+## Warning: cannot open file
+## 'C:/Users/sding/Documents/GitHub/585xproject/age.gb.csv': No such file or
+## directory
+```
+
+```
+## Error: cannot open the connection
+```
+
+```r
 age <- age[-1, -2]
+```
+
+```
+## Error: object 'age' not found
+```
+
+```r
 age$"Birth Period" <- 1982:2006
 ```
 
 ```
-## Error: replacement has 25 rows, data has 27
+## Error: object 'age' not found
 ```
 
 ```r
 colnames(age) <- c("Birth Period", "1 year old", "2 year old", "3 year old", 
     "4 year old", "5 year old", "6 year old", "7 year old", "8 year old", "9 year old", 
     "10 year old")
+```
+
+```
+## Error: object 'age' not found
+```
+
+```r
 age.melt <- melt(age, id = "Birth Period")
+```
+
+```
+## Error: object 'age' not found
+```
+
+```r
 age.melt$value <- as.numeric(age.melt$value)
+```
+
+```
+## Error: object 'age.melt' not found
+```
+
+```r
 age.melt$"Birth Period" <- as.numeric(age.melt$"Birth Period")
+```
+
+```
+## Error: object 'age.melt' not found
+```
+
+```r
 age.melt$variable <- as.factor(age.melt$variable)
+```
+
+```
+## Error: object 'age.melt' not found
+```
+
+```r
 
 pd <- position_dodge(0.1)
 ggplot(data = age.melt, aes(x = age.melt$"Birth Period", y = value, colour = variable)) + 
@@ -206,30 +569,106 @@ ggplot(data = age.melt, aes(x = age.melt$"Birth Period", y = value, colour = var
 ```
 
 ```
-## ymax not defined: adjusting position using y instead
+## Error: object 'age.melt' not found
 ```
-
-![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5.png) 
 
 
 **In recent two years, the distribution of BSE cases in great britain**
 
 ```r
 recent <- read.csv("C:/Users/sding/Documents/GitHub/585xproject/recent.csv")
+```
+
+```
+## Warning: cannot open file
+## 'C:/Users/sding/Documents/GitHub/585xproject/recent.csv': No such file or
+## directory
+```
+
+```
+## Error: cannot open the connection
+```
+
+```r
 a <- recent[-1, c(1, 2, 3, 4)]
+```
+
+```
+## Error: object 'recent' not found
+```
+
+```r
 recent[, c(2, 3, 4)] <- as.matrix(sapply(recent[, c(2, 3, 4)], as.numeric))
+```
+
+```
+## Error: object 'recent' not found
+```
+
+```r
 a$cases <- rowSums(recent[-1, c(2, 3, 4)])
+```
+
+```
+## Error: object 'recent' not found
+```
+
+```r
 a$County <- gsub("&", "and", a$County)
+```
+
+```
+## Error: object 'a' not found
+```
+
+```r
 a <- a[, -c(2, 3, 4)]
+```
+
+```
+## Error: object 'a' not found
+```
+
+```r
 a$County[a$County == "North-West Wales"] <- "Ceredigion"
+```
+
+```
+## Error: object 'a' not found
+```
+
+```r
 colnames(a) <- c("region", "cases")
+```
+
+```
+## Error: object 'a' not found
+```
+
+```r
 
 rec.dis <- merge(oz.subset, a, by = "region")
+```
+
+```
+## Error: error in evaluating the argument 'x' in selecting a method for function 'merge': Error: object 'oz.subset' not found
+```
+
+```r
 rec.dis$cases <- as.numeric(rec.dis$cases)
+```
+
+```
+## Error: object 'rec.dis' not found
+```
+
+```r
 ggplot() + geom_polygon(data = oz.subset, aes(x = x, y = y, order = order, group = group)) + 
     geom_polygon(data = rec.dis, aes(x = x, y = y, order = order, group = group, 
         fill = rec.dis$cases))
 ```
 
-![plot of chunk unnamed-chunk-6](figure/unnamed-chunk-6.png) 
+```
+## Error: object 'oz.subset' not found
+```
 

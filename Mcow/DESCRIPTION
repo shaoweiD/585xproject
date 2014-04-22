@@ -1,0 +1,15 @@
+Package: Mcow
+Title: R packages for STAT585X final project
+Description: The idea for this package is include all functions used in my
+    final project
+Version: 0.1
+Author: Shaowei Ding <swding@iastate.edu>
+Maintainer: Shaowei Ding <swding@iastate.edu>
+License: MIT
+VignetteBuilder: knitr
+Suggests:
+    knitr
+collate: 'date.r'
+    'percent.r'
+    'percent_reduction.r'
+    'extractPolygons.r'
