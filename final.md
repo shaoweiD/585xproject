@@ -6,8 +6,8 @@
 
 **Background**<br/>
 Bovine Spongiform Encephalopathy(BSE), or the so called "Mad Cow" disease,is a kind of prion related disease, which is fatal and trigger neurological dysfunction in Cattles. Prions are neither bacteria nor viruses, with no genetic informaiton, but still causes disease. It has long invubation period and progess inexorably once clinical conditions occur.(Araujo,2013) BSE can be transmitted by eating food containing brain,spinal cord or other nervous system tissue fro an infected animal, and prions begin to slowly transform normal protein into the abonormal prion shape, which eventually leads to fatal damage to the nervous system.The human form of BSE is called Creutzfeldt-Jakob Disease(CJD).BSE can cause death usually within one year of onset of illness.
-Currently disease diagnosis is still limited, and there isn't mature technique that can detect BSE at a earlier stage. Diseased animals have protein transformation in the central nervous system. Since retina is a derivative of forebrain, it is the most exposed portion of the central nervous system. Raman spectroscopy is a kind of non-invasive and non-destructive technique and can be used to measure unique fingerprint for different disease. And by applying this spectroscopy in retina, the most exposed nervous tissue; it is highly possible that BSE can be diagnosed accurately and at earlier stage.
-**Motivation**<br/>
+Currently disease diagnosis is still limited, and there isn't mature technique that can detect BSE at a earlier stage. Diseased animals have protein transformation in the central nervous system. Since retina is a derivative of forebrain, it is the most exposed portion of the central nervous system. Raman spectroscopy is a kind of non-invasive and non-destructive technique and can be used to measure unique fingerprint for different disease. And by applying this spectroscopy in retina, the most exposed nervous tissue; it is highly possible that BSE can be diagnosed accurately and at earlier stage.<br/>
+**Motivation**
 Bovine Spongiform Encephalopathy disease was first found in the mid-1980s from 16 cattle, and that number dramatically increased to over 190,000 cases worldwide, with the majority of them in Europe.(Lee et al., 2013) ,Which led to a disaster to human, the agricultural industry and the food industry. The worst case of BSE was happened in the United Kingdom, and in this analysis, we will take a close look at the developent of BSE in the United Kingdom.Since the research I am doing is about BSE diagnosis, and I think it is interesting to look at the history of this disease. Moreover, by inverstingating this case, it makes people have a better awareness of the importance of food safety.
 
 **Data Collecting**<br/>
@@ -129,6 +129,11 @@ colnames(age24) <- c("start", "end", "million of cattles", "# of case by date of
     "# per million by date of restriction")
 age.sub <- age24[-1, ]
 age.sub$name <- 1:74
+# I couldn't run Mcow packages from a different computer, so I add this
+# function in case the package wont be loaded in a different computer.
+date <- function(x) {
+    as.Date(x = paste("1-", x, sep = ""), format = "%d-%b-%y")
+}
 age.sub[, 1] <- date(age.sub[, 1])
 age.sub[, 2] <- date(age.sub[, 2])
 age.sub$"# per million by data of confirmation" <- as.numeric(as.character(age.sub$"# per million by data of confirmation"))
