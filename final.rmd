@@ -77,6 +77,10 @@ age24<-age24[c(1:75),-c(5,8)]
 colnames(age24)<-c("start","end","million of cattles","# of case by date of confirmation","# of case by date of restriction","# per million by data of confirmation","# per million by date of restriction")
 age.sub<-age24[-1,]
 age.sub$name<-1:74
+# I couldn't run Mcow packages from a different computer, so I add this function in case the package wont be loaded in a different computer.
+date<-function(x){
+as.Date(x = paste("1-", x, sep = ""), format = "%d-%b-%y")
+}
 age.sub[,1] <- date(age.sub[,1])
 age.sub[,2] <- date(age.sub[,2])
 age.sub$"# per million by data of confirmation"<-as.numeric(as.character(age.sub$"# per million by data of confirmation"))
@@ -100,6 +104,24 @@ library(Mcow)
 city<-read.csv("city.csv")
 uk<-readShapeSpatial('uk/map.shp')
 xxx <- thinnedSpatialPoly(as(uk, "SpatialPolygons"), tolerance = 0.1, minarea = 0.001, topologyPreserve = TRUE)
+extractPolygons <- function(shapes) {
+  require(plyr)
+  
+  dframe <- ldply(1:length(shapes@polygons), function(i) {
+    ob <- shapes@polygons[[i]]@Polygons
+    dframe <- ldply(1:length(ob), function(j) {
+      x <- ob[[j]]
+      co <- x@coords
+      data.frame(co, order = 1:nrow(co), group = j)
+    })
+    dframe$region <- i
+    dframe
+  })
+  # construct a group variable from both group and polygon:
+  dframe$group <- interaction(dframe$region, dframe$group)
+  
+  dframe
+}
 oz <- extractPolygons(xxx)
 #ggplot(oz, aes(x = x, y = y, group = group)) + 
   #geom_polygon(colour='black', fill='white')
