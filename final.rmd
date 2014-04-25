@@ -101,6 +101,7 @@ This plot indicates the population from 1987 to 2014 has been decreasing and the
 ```{r,echo=FALSE}
 library(maptools)
 library(Mcow)
+library(plyr)
 city<-read.csv("city.csv")
 uk<-readShapeSpatial('uk/map.shp')
 xxx <- thinnedSpatialPoly(as(uk, "SpatialPolygons"), tolerance = 0.1, minarea = 0.001, topologyPreserve = TRUE)
