@@ -1,7 +1,7 @@
-585xproject: Analysis of Madcow disease in United Kindom and a shiny application for Raman Spectra Analysis
+##585xproject: Analysis of Mad Cow Disease in United Kindom and a Shiny Application for Raman Spectra Analysis
 ===========
-Shaowei Ding
-Biological System Engineering
+Shaowei Ding<br/>
+Biological System Engineering<br/>
 shiny app: http://shaowei.shinyapps.io/raman_Shiny
 
 
