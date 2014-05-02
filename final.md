@@ -151,7 +151,6 @@ ggplot(mage, aes(mage$value, as.factor(mage$"# per million by data of confirmati
     geom_line(size = 6) + xlab("period") + ylab("number per million by data of confirmation") + 
     theme_bw()
 ```
-**Distribution of confimed cases in Great Britain**<br/>
 
 ![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-32.png) 
 
@@ -164,7 +163,7 @@ This plot indicates the population from 1987 to 2014 has been decreasing and the
 ##  	which has a restricted licence. It is disabled by default;
 ##  	to enable gpclib, type gpclibPermit()
 ```
-**Distribution of farmed with confimed cases in Great Britain**<br/>
+**Distribution of confimed cases and farms in Great Britain**<br/>
 
 ![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-41.png) ![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-42.png) 
 
