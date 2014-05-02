@@ -103,7 +103,7 @@ ggplot(data = trend.det, aes(x = YEAR, y = value, colour = variable)) + geom_lin
 This plot shows the trend of restricted case and confirmed case. They all follow the similar curve, but the amplitude is different. The amount of suspected cases is a lot and almost all of those animals were slaughtered. Among them, the purple curve represents the actual confirmed cases.
 
 **Cattle population over 24 months of ages and number of confirmed cases per million**<br/>
-Since  the population of cattles were not contant during the time when people recorded the data, it is meaningful to take a look at the percentage of suspected of animals based on a time interval. Also, because of  a big moraility rate, the analysis can be focused on cattle with age older than 24 months. The x axis is the period when people took measurement, and the y axis is the amount of cattles confirmed with BSE disease.
+Since  the population of cattles were not constant during the time when people recorded the data, it is meaningful to take a look at the percentage of suspected of animals based on a time interval. Also, because of  a big moraility rate, the analysis can be focused on cattle with age older than 24 months. The x axis is the period when people took measurement, and the y axis is the amount of cattles confirmed with BSE disease.
 
 
 ```r
